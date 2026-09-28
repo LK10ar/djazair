@@ -1,12 +1,26 @@
 <!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Informations légales — Djazaïr</title>
-<style>body{font:16px/1.6 Georgia,serif;max-width:800px;margin:auto;padding:16px;color:#2a2118;background:#fbf7ef}
-@media(prefers-color-scheme:dark){body{color:#f3ead9;background:#17130e}a{color:#e0a040}}
-nav{display:flex;flex-wrap:wrap;gap:8px 16px;padding:10px 0;border-bottom:1px solid #8886;font:14px system-ui}
-section{padding-top:12px;border-bottom:1px solid #8886}h2{color:#c0562b}</style></head><body>
-<p><a href="index.html">← Retour au site</a></p><h1>Informations légales</h1>
-<nav><a href="#mentions">Mentions légales</a><a href="#cgu">CGU</a><a href="#cgv">CGV</a><a href="#confidentialite">Confidentialité</a><a href="#securite">Sécurité</a></nav>
-<section id="mentions"><h2>Mentions légales</h2>
+<title>Djazaïr — Legal</title>
+<script>(function(){var L=['fr','en','es','ar'],l=null;try{l=localStorage.getItem('lang')}catch(e){}if(L.indexOf(l)<0){var n=(navigator.language||'fr').slice(0,2);l=L.indexOf(n)<0?'fr':n}document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr'})()</script>
+<style>
+:root{--bg:#fbf7ef;--fg:#2a2118;--line:#8886;--acc:#c0562b}
+@media(prefers-color-scheme:dark){:root{--bg:#14100b;--fg:#f3ead9;--acc:#e0a040}}
+*{box-sizing:border-box}
+body{font:16px/1.6 Georgia,serif;max-width:820px;margin:auto;padding:16px;color:var(--fg);background:var(--bg)}
+a{color:var(--acc)}
+[data-l]{display:none}
+html[lang=fr] [data-l=fr],html[lang=en] [data-l=en],html[lang=es] [data-l=es],html[lang=ar] [data-l=ar]{display:revert}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+select{font:inherit;background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:8px;padding:5px 8px}
+nav{display:flex;flex-wrap:wrap;gap:8px 16px;padding:10px 0;border-bottom:1px solid var(--line);font:14px system-ui}
+section{padding:12px 0;border-bottom:1px solid var(--line);scroll-margin-top:12px}
+h2{color:var(--acc)}
+p{white-space:pre-line}
+</style></head><body>
+<div class="top"><a href="index.html"><span data-l="fr">← Retour au site</span><span data-l="en">← Back to site</span><span data-l="es">← Volver al sitio</span><span data-l="ar">→ العودة إلى الموقع</span></a>
+<select id="lang" aria-label="Language"><option value="fr">FR</option><option value="ar">العربية</option><option value="en">EN</option><option value="es">ES</option></select></div>
+<h1><span data-l="fr">Informations légales</span><span data-l="en">Legal information</span><span data-l="es">Información legal</span><span data-l="ar">معلومات قانونية</span></h1>
+<nav><a href="#mentions"><span data-l="fr">Mentions légales</span><span data-l="en">Legal notice</span><span data-l="es">Aviso legal</span><span data-l="ar">إشعار قانوني</span></a><a href="#cgu"><span data-l="fr">CGU</span><span data-l="en">Terms of use</span><span data-l="es">Condiciones de uso</span><span data-l="ar">شروط الاستعمال</span></a><a href="#cgv"><span data-l="fr">CGV</span><span data-l="en">Terms of sale</span><span data-l="es">Condiciones de venta</span><span data-l="ar">شروط البيع</span></a><a href="#confidentialite"><span data-l="fr">Confidentialité</span><span data-l="en">Privacy</span><span data-l="es">Privacidad</span><span data-l="ar">الخصوصية</span></a><a href="#securite"><span data-l="fr">Sécurité</span><span data-l="en">Security</span><span data-l="es">Seguridad</span><span data-l="ar">الأمان</span></a></nav>
+<section id="mentions"><div data-l="fr"><h2>Mentions légales</h2>
 <p><strong>Éditeur du site</strong> : [À COMPLÉTER : raison sociale], [forme juridique], capital de [montant]
 Siège social : [adresse]
 Immatriculation : [RCS / n° de registre du commerce algérien (CNRC)], NIF/SIRET : [À COMPLÉTER]
@@ -16,19 +30,79 @@ Directeur de la publication : [nom]
 Contact : [email] — [téléphone]</p>
 <p><strong>Hébergeur</strong> : Render Services, Inc., 525 Brannan Street, Suite 300, San Francisco, CA 94107, États-Unis — render.com
 <strong>Base de données</strong> : MongoDB, Inc. (Atlas), région [À COMPLÉTER].</p>
-<p><strong>Propriété intellectuelle</strong> : l'ensemble des textes, logos et éléments graphiques est protégé. Les images affichées via des liens externes restent la propriété de leurs auteurs ; toute demande de retrait peut être adressée à [email].</p>
+<p><strong>Propriété intellectuelle</strong> : l'ensemble des textes, logos et éléments graphiques est protégé. Les images affichées via des liens externes restent la propriété de leurs auteurs (dont les contributeurs de Wikimedia Commons, sous leurs licences respectives) ; toute demande de retrait peut être adressée à [email].</p>
 <p><strong>Responsabilité</strong> : les informations (programmes, horaires, tarifs) sont données à titre indicatif et peuvent évoluer. Le site peut contenir des liens vers des sites tiers dont l'éditeur n'est pas responsable.</p>
-<p><strong>Droit applicable</strong> : droit [français / algérien selon l'entité contractante] ; à défaut d'accord amiable, tribunaux compétents de [ville].</p></section>
-<section id="cgu"><h2>Conditions Générales d'Utilisation (CGU)</h2>
+<p><strong>Droit applicable</strong> : droit [français / algérien selon l'entité contractante] ; à défaut d'accord amiable, tribunaux compétents de [ville].</p></div><div data-l="en"><h2>Legal notice</h2>
+<p><strong>Publisher</strong>: [TO COMPLETE: company name], [legal form], share capital of [amount]
+Registered office: [address]
+Registration: [RCS / Algerian trade register (CNRC) no.], Tax ID / SIRET: [TO COMPLETE]
+Travel agency licence: [Algerian licence no.] / [Atout France registration, if selling in France]
+Financial guarantee: [organisation] — Professional liability insurance: [insurer, policy no.]
+Publication director: [name]
+Contact: [email] — [phone]</p>
+<p><strong>Host</strong>: Render Services, Inc., 525 Brannan Street, Suite 300, San Francisco, CA 94107, United States — render.com
+<strong>Database</strong>: MongoDB, Inc. (Atlas), region [TO COMPLETE].</p>
+<p><strong>Intellectual property</strong>: all texts, logos and graphics are protected. Images displayed through external links remain the property of their authors (including Wikimedia Commons contributors, under their respective licences); removal requests may be sent to [email].</p>
+<p><strong>Liability</strong>: information (programmes, schedules, prices) is indicative and may change. The site may contain links to third-party sites for which the publisher is not responsible.</p>
+<p><strong>Governing law</strong>: [French / Algerian] law depending on the contracting entity; failing an amicable settlement, the competent courts of [city].</p></div><div data-l="es"><h2>Aviso legal</h2>
+<p><strong>Editor del sitio</strong>: [A COMPLETAR: razón social], [forma jurídica], capital de [importe]
+Domicilio social: [dirección]
+Registro: [RCS / n.º del registro mercantil argelino (CNRC)], NIF/SIRET: [A COMPLETAR]
+Licencia de agencia de viajes: [n.º de licencia en Argelia] / [registro Atout France, si se vende en Francia]
+Garantía financiera: [organismo] — Seguro de responsabilidad civil profesional: [aseguradora, n.º de póliza]
+Director de la publicación: [nombre]
+Contacto: [correo electrónico] — [teléfono]</p>
+<p><strong>Alojamiento web</strong>: Render Services, Inc., 525 Brannan Street, Suite 300, San Francisco, CA 94107, Estados Unidos — render.com
+<strong>Base de datos</strong>: MongoDB, Inc. (Atlas), región [A COMPLETAR].</p>
+<p><strong>Propiedad intelectual</strong>: todos los textos, logotipos y elementos gráficos están protegidos. Las imágenes mostradas mediante enlaces externos siguen siendo propiedad de sus autores (incluidos los colaboradores de Wikimedia Commons, bajo sus respectivas licencias); las solicitudes de retirada pueden dirigirse a [correo electrónico].</p>
+<p><strong>Responsabilidad</strong>: la información (programas, horarios, precios) es orientativa y puede cambiar. El sitio puede contener enlaces a sitios de terceros de los que el editor no es responsable.</p>
+<p><strong>Derecho aplicable</strong>: derecho [francés / argelino según la entidad contratante]; a falta de acuerdo amistoso, tribunales competentes de [ciudad].</p></div><div data-l="ar"><h2>إشعار قانوني</h2>
+<p><strong>ناشر الموقع</strong>: [يُستكمل: الاسم التجاري]، [الشكل القانوني]، رأس المال [المبلغ]
+المقر الاجتماعي: [العنوان]
+التسجيل: [السجل التجاري / رقم السجل التجاري الجزائري (CNRC)]، الرقم الجبائي / SIRET: [يُستكمل]
+رخصة وكالة السفر: [رقم الاعتماد في الجزائر] / [تسجيل Atout France عند البيع في فرنسا]
+الضمان المالي: [الهيئة] — التأمين على المسؤولية المدنية المهنية: [شركة التأمين، رقم الوثيقة]
+مدير النشر: [الاسم]
+الاتصال: [البريد الإلكتروني] — [الهاتف]</p>
+<p><strong>المستضيف</strong>: Render Services, Inc., 525 Brannan Street, Suite 300, San Francisco, CA 94107، الولايات المتحدة — render.com
+<strong>قاعدة البيانات</strong>: MongoDB, Inc. (Atlas)، المنطقة [يُستكمل].</p>
+<p><strong>الملكية الفكرية</strong>: جميع النصوص والشعارات والعناصر الرسومية محمية. تبقى الصور المعروضة عبر روابط خارجية ملكاً لأصحابها (ومنهم مساهمو ويكيميديا كومنز وفق رخصهم)؛ ويمكن إرسال طلبات الحذف إلى [البريد الإلكتروني].</p>
+<p><strong>المسؤولية</strong>: المعلومات (البرامج، المواعيد، الأسعار) مقدمة على سبيل الإرشاد وقابلة للتغيير. قد يتضمن الموقع روابط لمواقع أخرى لا يتحمل الناشر مسؤوليتها.</p>
+<p><strong>القانون المطبق</strong>: القانون [الفرنسي / الجزائري بحسب الجهة المتعاقدة]؛ وعند تعذر التسوية الودية تختص محاكم [المدينة].</p></div></section>
+<section id="cgu"><div data-l="fr"><h2>Conditions Générales d'Utilisation (CGU)</h2>
 <p><strong>Art. 1 — Objet.</strong> Les présentes CGU encadrent l'accès et l'utilisation du site [nom de domaine]. Naviguer sur le site vaut acceptation des CGU.</p>
 <p><strong>Art. 2 — Accès.</strong> Le site est accessible 24 h/24, sauf maintenance ou force majeure. L'éditeur peut suspendre l'accès sans préavis.</p>
 <p><strong>Art. 3 — Compte et espace d'administration.</strong> L'accès au back-office est réservé aux personnes habilitées. Les identifiants sont personnels et confidentiels ; leur titulaire répond de leur usage.</p>
-<p><strong>Art. 4 — Contenus et enrichissement automatique.</strong> Certaines fiches (lieux, restaurants, faits historiques) sont pré-remplies à partir de sources publiques (Wikipedia, Google Places) puis vérifiées avant publication. L'éditeur ne garantit pas l'exhaustivité ni l'actualité de ces informations.</p>
+<p><strong>Art. 4 — Contenus et enrichissement automatique.</strong> Certaines fiches (lieux, restaurants, faits historiques) sont pré-remplies à partir de sources publiques (Wikipedia, Google Places) puis vérifiées avant publication. Les photos et extraits d'histoire affichés proviennent de Wikipédia et de Wikimedia Commons, sous leurs licences libres respectives (ex. CC BY-SA). L'éditeur ne garantit pas l'exhaustivité ni l'actualité de ces informations.</p>
 <p><strong>Art. 5 — Comportements interdits.</strong> Extraction massive de données, tentative d'intrusion, diffusion de contenus illicites, usurpation d'identité.</p>
 <p><strong>Art. 6 — Propriété intellectuelle.</strong> Toute reproduction non autorisée est interdite.</p>
 <p><strong>Art. 7 — Modification.</strong> Les CGU peuvent évoluer ; la version en ligne fait foi.</p>
-<p><strong>Art. 8 — Droit applicable et litiges.</strong> Voir mentions légales. Le consommateur peut recourir gratuitement à un médiateur : [nom et coordonnées du médiateur de la consommation — À COMPLÉTER].</p></section>
-<section id="cgv"><h2>Conditions Générales de Vente (CGV)</h2>
+<p><strong>Art. 8 — Droit applicable et litiges.</strong> Voir mentions légales. Le consommateur peut recourir gratuitement à un médiateur : [nom et coordonnées du médiateur de la consommation — À COMPLÉTER].</p></div><div data-l="en"><h2>Terms of Use</h2>
+<p><strong>Art. 1 — Purpose.</strong> These Terms of Use govern access to and use of the site [domain name]. Browsing the site constitutes acceptance of these Terms.</p>
+<p><strong>Art. 2 — Access.</strong> The site is available 24/7, except for maintenance or force majeure. The publisher may suspend access without notice.</p>
+<p><strong>Art. 3 — Account and administration area.</strong> Access to the back-office is restricted to authorised persons. Credentials are personal and confidential; their holder is responsible for their use.</p>
+<p><strong>Art. 4 — Content and automatic enrichment.</strong> Some pages (places, restaurants, historical facts) are pre-filled from public sources (Wikipedia, Google Places) and then checked before publication. The photos and history extracts shown come from Wikipedia and Wikimedia Commons under their respective free licences (e.g. CC BY-SA). The publisher does not guarantee the completeness or currency of this information.</p>
+<p><strong>Art. 5 — Prohibited conduct.</strong> Mass data extraction, intrusion attempts, distribution of unlawful content, identity theft.</p>
+<p><strong>Art. 6 — Intellectual property.</strong> Any unauthorised reproduction is prohibited.</p>
+<p><strong>Art. 7 — Changes.</strong> These Terms may change; the online version prevails.</p>
+<p><strong>Art. 8 — Governing law and disputes.</strong> See the legal notice. Consumers may use a consumer mediator free of charge: [name and contact details of the consumer mediator — TO COMPLETE].</p></div><div data-l="es"><h2>Condiciones Generales de Uso</h2>
+<p><strong>Art. 1 — Objeto.</strong> Estas condiciones regulan el acceso y el uso del sitio [nombre de dominio]. Navegar por el sitio implica su aceptación.</p>
+<p><strong>Art. 2 — Acceso.</strong> El sitio está disponible las 24 horas, salvo mantenimiento o fuerza mayor. El editor puede suspender el acceso sin previo aviso.</p>
+<p><strong>Art. 3 — Cuenta y espacio de administración.</strong> El acceso al back-office está reservado a las personas autorizadas. Las credenciales son personales y confidenciales; su titular responde de su uso.</p>
+<p><strong>Art. 4 — Contenidos y enriquecimiento automático.</strong> Algunas fichas (lugares, restaurantes, hechos históricos) se rellenan previamente a partir de fuentes públicas (Wikipedia, Google Places) y se verifican antes de su publicación. Las fotos y los extractos de historia mostrados proceden de Wikipedia y Wikimedia Commons, bajo sus respectivas licencias libres (p. ej. CC BY-SA). El editor no garantiza que esta información sea exhaustiva ni actual.</p>
+<p><strong>Art. 5 — Conductas prohibidas.</strong> Extracción masiva de datos, intentos de intrusión, difusión de contenidos ilícitos, suplantación de identidad.</p>
+<p><strong>Art. 6 — Propiedad intelectual.</strong> Queda prohibida toda reproducción no autorizada.</p>
+<p><strong>Art. 7 — Modificación.</strong> Estas condiciones pueden cambiar; prevalece la versión en línea.</p>
+<p><strong>Art. 8 — Derecho aplicable y litigios.</strong> Véase el aviso legal. El consumidor puede recurrir gratuitamente a un mediador: [nombre y datos de contacto del mediador de consumo — A COMPLETAR].</p></div><div data-l="ar"><h2>شروط الاستعمال العامة</h2>
+<p><strong>المادة 1 — الموضوع.</strong> تنظم هذه الشروط الدخول إلى الموقع [اسم النطاق] واستعماله. ويُعد تصفح الموقع قبولاً لها.</p>
+<p><strong>المادة 2 — الدخول.</strong> الموقع متاح على مدار الساعة، باستثناء أعمال الصيانة أو القوة القاهرة. ويجوز للناشر تعليق الدخول دون إشعار مسبق.</p>
+<p><strong>المادة 3 — الحساب ومساحة الإدارة.</strong> الدخول إلى لوحة الإدارة مقتصر على الأشخاص المخوَّلين. بيانات الدخول شخصية وسرية، ويتحمل صاحبها مسؤولية استعمالها.</p>
+<p><strong>المادة 4 — المحتوى والإثراء التلقائي.</strong> تُملأ بعض الصفحات (الأماكن، المطاعم، الوقائع التاريخية) مسبقاً انطلاقاً من مصادر عمومية (ويكيبيديا، Google Places) ثم تُراجع قبل النشر. الصور ومقتطفات التاريخ المعروضة مصدرها ويكيبيديا وويكيميديا كومنز وفق رخصهما الحرة (مثل CC BY-SA). ولا يضمن الناشر شمولية هذه المعلومات ولا حداثتها.</p>
+<p><strong>المادة 5 — السلوكات المحظورة.</strong> الاستخراج المكثف للبيانات، محاولات الاختراق، نشر محتويات غير مشروعة، انتحال الهوية.</p>
+<p><strong>المادة 6 — الملكية الفكرية.</strong> يُحظر كل استنساخ غير مرخّص.</p>
+<p><strong>المادة 7 — التعديل.</strong> يجوز تعديل هذه الشروط، وتكون النسخة المنشورة على الإنترنت هي المرجع.</p>
+<p><strong>المادة 8 — القانون المطبق والنزاعات.</strong> انظر الإشعار القانوني. يمكن للمستهلك اللجوء مجاناً إلى وسيط: [اسم وبيانات وسيط الاستهلاك — يُستكمل].</p></div></section>
+<section id="cgv"><div data-l="fr"><h2>Conditions Générales de Vente (CGV)</h2>
 <p><strong>Art. 1 — Champ d'application.</strong> Les CGV régissent la vente des circuits, séjours et prestations proposés sur le site. Elles complètent les informations précontractuelles (programme, durée, transport, hébergement, taille minimale du groupe) fournies pour chaque circuit.</p>
 <p><strong>Art. 2 — Prix.</strong> Prix en [DZD / EUR], par personne, sur la base indiquée (ex. chambre double), taxes comprises. Ne sont pas compris, sauf mention contraire : vols internationaux, boissons, pourboires, dépenses personnelles, assurances.</p>
 <p><strong>Art. 3 — Réservation et paiement.</strong> Réservation ferme après acceptation des CGV et versement d'un acompte de [30 %] ; solde au plus tard [30] jours avant le départ. Moyens de paiement : [carte CIB / Edahabia (SATIM) — carte bancaire internationale — virement]. Les paiements en ligne sont traités par un prestataire certifié ; l'éditeur ne conserve aucune donnée de carte.</p>
@@ -40,8 +114,44 @@ Contact : [email] — [téléphone]</p>
 <p><strong>Art. 9 — Formalités.</strong> Le voyageur doit disposer d'un passeport valide et, le cas échéant, d'un visa. L'éditeur informe mais ne se substitue pas aux autorités.</p>
 <p><strong>Art. 10 — Responsabilité et assurances.</strong> L'éditeur répond de la bonne exécution des prestations, sauf faute du client, fait imprévisible d'un tiers ou force majeure. Une assurance assistance-rapatriement et annulation est fortement recommandée.</p>
 <p><strong>Art. 11 — Réclamations.</strong> Par écrit à [email] dans les [30] jours suivant le retour. Médiation : voir CGU art. 8.</p>
-<p><strong>Art. 12 — Droit applicable.</strong> Voir mentions légales.</p></section>
-<section id="confidentialite"><h2>Politique de confidentialité et cookies</h2>
+<p><strong>Art. 12 — Droit applicable.</strong> Voir mentions légales.</p></div><div data-l="en"><h2>Terms of Sale</h2>
+<p><strong>Art. 1 — Scope.</strong> These Terms of Sale govern the sale of tours, stays and services offered on the site. They supplement the pre-contractual information (programme, duration, transport, accommodation, minimum group size) provided for each tour.</p>
+<p><strong>Art. 2 — Prices.</strong> Prices are in [DZD / EUR], per person, on the stated basis (e.g. double room), taxes included. Not included unless stated otherwise: international flights, drinks, tips, personal expenses, insurance.</p>
+<p><strong>Art. 3 — Booking and payment.</strong> A booking is firm once these Terms are accepted and a deposit of [30%] is paid; the balance is due no later than [30] days before departure. Payment methods: [CIB / Edahabia card (SATIM) — international bank card — bank transfer]. Online payments are processed by a certified provider; the publisher stores no card data.</p>
+<p><strong>Art. 4 — Minimum group.</strong> Each tour requires a minimum of [10] participants. Otherwise the publisher may cancel at the latest [20] days before departure (7 days for stays shorter than 6 days) and refunds all sums paid in full.</p>
+<p><strong>Art. 5 — Changes by the customer.</strong> Any change is subject to availability and may incur fees of [TO COMPLETE].</p>
+<p><strong>Art. 6 — Cancellation by the customer.</strong> Indicative scale: more than 60 days before departure: [10%]; 60 to 30 days: [30%]; 29 to 15 days: [60%]; less than 15 days or no-show: 100%.</p>
+<p><strong>Art. 7 — Right of withdrawal.</strong> Under the rules applicable to dated travel services, the 14-day right of withdrawal does not apply to transport and accommodation services provided on a specific date (French Consumer Code, art. L221-28) [TO VERIFY depending on the selling entity].</p>
+<p><strong>Art. 8 — Special “Deep South” conditions.</strong> The Hoggar, Tassili and camel-trek tours take place in remote areas (4x4, bivouac, camping, camel) and require good physical fitness and acceptance of uncertainties. Personal equipment (sleeping bag, torch, suitable shoes) is the participant's responsibility unless stated otherwise.</p>
+<p><strong>Art. 9 — Formalities.</strong> Travellers must hold a valid passport and, where applicable, a visa. The publisher provides information but does not replace the authorities.</p>
+<p><strong>Art. 10 — Liability and insurance.</strong> The publisher is liable for the proper performance of the services, except in case of customer fault, unforeseeable act of a third party or force majeure. Assistance-repatriation and cancellation insurance is strongly recommended.</p>
+<p><strong>Art. 11 — Complaints.</strong> In writing to [email] within [30] days of return. Mediation: see Terms of Use art. 8.</p>
+<p><strong>Art. 12 — Governing law.</strong> See the legal notice.</p></div><div data-l="es"><h2>Condiciones Generales de Venta</h2>
+<p><strong>Art. 1 — Ámbito de aplicación.</strong> Estas condiciones regulan la venta de circuitos, estancias y servicios ofrecidos en el sitio. Complementan la información precontractual (programa, duración, transporte, alojamiento, tamaño mínimo del grupo) facilitada para cada circuito.</p>
+<p><strong>Art. 2 — Precios.</strong> Precios en [DZD / EUR], por persona, sobre la base indicada (p. ej. habitación doble), impuestos incluidos. No incluye, salvo indicación contraria: vuelos internacionales, bebidas, propinas, gastos personales, seguros.</p>
+<p><strong>Art. 3 — Reserva y pago.</strong> La reserva es firme tras la aceptación de estas condiciones y el pago de un anticipo del [30 %]; el saldo, a más tardar [30] días antes de la salida. Medios de pago: [tarjeta CIB / Edahabia (SATIM) — tarjeta bancaria internacional — transferencia]. Los pagos en línea los procesa un proveedor certificado; el editor no conserva ningún dato de tarjeta.</p>
+<p><strong>Art. 4 — Grupo mínimo.</strong> Cada circuito requiere un mínimo de [10] participantes. En caso contrario, el editor podrá cancelar como máximo [20] días antes de la salida (7 días en estancias de menos de 6 días) y reembolsará íntegramente las sumas abonadas.</p>
+<p><strong>Art. 5 — Modificación por el cliente.</strong> Toda modificación está sujeta a disponibilidad y puede generar gastos de [A COMPLETAR].</p>
+<p><strong>Art. 6 — Cancelación por el cliente.</strong> Baremo orientativo: más de 60 días antes de la salida: [10 %]; de 60 a 30 días: [30 %]; de 29 a 15 días: [60 %]; menos de 15 días o no presentación: 100 %.</p>
+<p><strong>Art. 7 — Derecho de desistimiento.</strong> Conforme a la normativa aplicable a los servicios de viaje con fecha determinada, el derecho de desistimiento de 14 días no se aplica a los servicios de transporte y alojamiento prestados en una fecha precisa (Código de Consumo francés, art. L221-28) [A VERIFICAR según la entidad vendedora].</p>
+<p><strong>Art. 8 — Condiciones particulares «Gran Sur».</strong> Los circuitos del Hoggar, el Tassili y las travesías en dromedario se desarrollan en zonas aisladas (4x4, vivac, camping, dromedario) y exigen buena condición física y la aceptación de imprevistos. El material personal (saco de dormir, linterna, calzado adecuado) corre a cargo del participante, salvo indicación contraria.</p>
+<p><strong>Art. 9 — Formalidades.</strong> El viajero debe disponer de pasaporte válido y, en su caso, de visado. El editor informa, pero no sustituye a las autoridades.</p>
+<p><strong>Art. 10 — Responsabilidad y seguros.</strong> El editor responde de la correcta ejecución de los servicios, salvo culpa del cliente, hecho imprevisible de un tercero o fuerza mayor. Se recomienda encarecidamente un seguro de asistencia, repatriación y cancelación.</p>
+<p><strong>Art. 11 — Reclamaciones.</strong> Por escrito a [correo electrónico] en los [30] días siguientes al regreso. Mediación: véase CGU art. 8.</p>
+<p><strong>Art. 12 — Derecho aplicable.</strong> Véase el aviso legal.</p></div><div data-l="ar"><h2>شروط البيع العامة</h2>
+<p><strong>المادة 1 — مجال التطبيق.</strong> تنظم هذه الشروط بيع الرحلات والإقامات والخدمات المعروضة على الموقع. وهي تكمّل المعلومات السابقة للتعاقد (البرنامج، المدة، النقل، الإقامة، الحد الأدنى لحجم المجموعة) المقدمة لكل رحلة.</p>
+<p><strong>المادة 2 — الأسعار.</strong> الأسعار بـ [دينار جزائري / أورو] للشخص الواحد، على الأساس المذكور (مثلاً غرفة مزدوجة)، شاملة للرسوم. لا تشمل، ما لم يُذكر خلاف ذلك: الرحلات الجوية الدولية، المشروبات، الإكراميات، المصاريف الشخصية، التأمينات.</p>
+<p><strong>المادة 3 — الحجز والدفع.</strong> يصبح الحجز نهائياً بعد قبول هذه الشروط ودفع عربون قدره [30٪]؛ ويُسدَّد الباقي قبل [30] يوماً على الأكثر من موعد المغادرة. وسائل الدفع: [بطاقة CIB / الذهبية (SATIM) — بطاقة بنكية دولية — تحويل بنكي]. تتم معالجة المدفوعات عبر الإنترنت من طرف مزوّد معتمد، ولا يحتفظ الناشر بأي بيانات بطاقة.</p>
+<p><strong>المادة 4 — الحد الأدنى للمجموعة.</strong> تتطلب كل رحلة حداً أدنى من [10] مشاركين. وإلا جاز للناشر الإلغاء قبل [20] يوماً على الأكثر من المغادرة (7 أيام للإقامات التي تقل عن 6 أيام) مع رد كامل المبالغ المدفوعة.</p>
+<p><strong>المادة 5 — التعديل من طرف الزبون.</strong> كل تعديل مرهون بالتوفر وقد يترتب عليه رسوم قدرها [يُستكمل].</p>
+<p><strong>المادة 6 — الإلغاء من طرف الزبون.</strong> جدول إرشادي: أكثر من 60 يوماً قبل المغادرة: [10٪]؛ من 60 إلى 30 يوماً: [30٪]؛ من 29 إلى 15 يوماً: [60٪]؛ أقل من 15 يوماً أو عدم الحضور: 100٪.</p>
+<p><strong>المادة 7 — حق العدول.</strong> طبقاً للتنظيم المطبق على خدمات السفر ذات التاريخ المحدد، لا ينطبق حق العدول البالغ 14 يوماً على خدمات النقل والإيواء المقدمة في تاريخ محدد (قانون الاستهلاك الفرنسي، المادة L221-28) [يُتحقق منه بحسب الجهة البائعة].</p>
+<p><strong>المادة 8 — شروط خاصة بـ«الجنوب الكبير».</strong> تجري رحلات الهقار وطاسيلي والميهاري في مناطق معزولة (سيارات رباعية الدفع، مبيت في العراء، تخييم، جمال) وتتطلب لياقة بدنية جيدة وقبول المفاجآت. والتجهيزات الشخصية (كيس النوم، المصباح، الأحذية المناسبة) على عاتق المشارك ما لم يُذكر خلاف ذلك.</p>
+<p><strong>المادة 9 — الإجراءات.</strong> يجب أن يحوز المسافر جواز سفر ساري المفعول وتأشيرة عند الاقتضاء. ويقدم الناشر المعلومات دون أن يحل محل السلطات.</p>
+<p><strong>المادة 10 — المسؤولية والتأمين.</strong> يسأل الناشر عن حسن تنفيذ الخدمات، إلا في حالة خطأ الزبون أو فعل غير متوقع من الغير أو قوة قاهرة. يُنصح بشدة بتأمين المساعدة والإعادة إلى الوطن والإلغاء.</p>
+<p><strong>المادة 11 — الشكاوى.</strong> كتابياً إلى [البريد الإلكتروني] خلال [30] يوماً من العودة. الوساطة: انظر المادة 8 من شروط الاستعمال.</p>
+<p><strong>المادة 12 — القانون المطبق.</strong> انظر الإشعار القانوني.</p></div></section>
+<section id="confidentialite"><div data-l="fr"><h2>Politique de confidentialité et cookies</h2>
 <p><strong>Responsable du traitement</strong> : [raison sociale, adresse, email DPO/contact].</p>
 <p><strong>Données collectées</strong> : identité et coordonnées (formulaires, réservation), données de voyage (dates, préférences), données de connexion administrateur, données techniques (IP, navigateur), préférence de langue.</p>
 <p><strong>Finalités et bases légales</strong>
@@ -51,12 +161,58 @@ Contact : [email] — [téléphone]</p>
 - Obligations comptables et légales — obligation légale.
 - Lettre d'information — consentement (retirable à tout moment).</p>
 <p><strong>Destinataires</strong> : équipe de l'éditeur, hébergeur (Render), base de données (MongoDB Atlas), prestataire de paiement, partenaires de voyage strictement nécessaires (hôtels, transporteurs, guides).</p>
+<p><strong>Services tiers chargés par votre navigateur</strong> : pour afficher les photos, extraits d'histoire et cartes, votre navigateur contacte directement Wikipédia / Wikimedia (Wikimedia Foundation) et OpenStreetMap (OpenStreetMap Foundation). Votre adresse IP leur est alors transmise. Nous n'utilisons aucun traceur publicitaire.</p>
 <p><strong>Transferts hors UE / hors Algérie</strong> : encadrés par des clauses contractuelles types de la Commission européenne ; pour l'Algérie, dans le respect de la loi 18-07 et des autorisations de l'ANPDP lorsqu'elles sont requises.</p>
 <p><strong>Durées de conservation</strong> : réservations 5 ans après le dernier voyage ; prospects 3 ans après le dernier contact ; journaux techniques 12 mois ; cookies 13 mois maximum.</p>
 <p><strong>Vos droits</strong> : accès, rectification, effacement, limitation, opposition, portabilité, retrait du consentement, directives post-mortem. Exercice : [email]. Réclamation possible auprès de la CNIL (cnil.fr) et de l'ANPDP (Algérie).</p>
 <p><strong>Cookies</strong> : les cookies strictement nécessaires (langue, session) sont déposés sans consentement ; audience et tiers uniquement après votre accord via le bandeau, avec refus aussi simple que l'acceptation. Liste : [nom, finalité, durée — À COMPLÉTER].</p>
-<p><strong>Mineurs</strong> : le site ne s'adresse pas aux moins de 15 ans sans autorisation parentale.</p></section>
-<section id="securite"><h2>Politique de sécurité</h2>
+<p><strong>Mineurs</strong> : le site ne s'adresse pas aux moins de 15 ans sans autorisation parentale.</p></div><div data-l="en"><h2>Privacy and cookie policy</h2>
+<p><strong>Data controller</strong>: [company name, address, DPO/contact email].</p>
+<p><strong>Data collected</strong>: identity and contact details (forms, bookings), travel data (dates, preferences), administrator login data, technical data (IP, browser), language preference.</p>
+<p><strong>Purposes and legal bases</strong>
+- Handle requests and bookings — performance of a contract.
+- Manage the administrator account and security — legitimate interest.
+- Audience measurement and site improvement — consent.
+- Accounting and legal obligations — legal obligation.
+- Newsletter — consent (withdrawable at any time).</p>
+<p><strong>Recipients</strong>: the publisher's team, host (Render), database (MongoDB Atlas), payment provider, strictly necessary travel partners (hotels, carriers, guides).</p>
+<p><strong>Third-party services loaded by your browser</strong>: to display photos, history extracts and maps, your browser contacts Wikipedia / Wikimedia (Wikimedia Foundation) and OpenStreetMap (OpenStreetMap Foundation) directly. Your IP address is then sent to them. We use no advertising trackers.</p>
+<p><strong>Transfers outside the EU / Algeria</strong>: governed by the European Commission's standard contractual clauses; for Algeria, in compliance with Law 18-07 and ANPDP authorisations where required.</p>
+<p><strong>Retention periods</strong>: bookings 5 years after the last trip; prospects 3 years after the last contact; technical logs 12 months; cookies 13 months maximum.</p>
+<p><strong>Your rights</strong>: access, rectification, erasure, restriction, objection, portability, withdrawal of consent, post-mortem directives. To exercise them: [email]. You may lodge a complaint with the CNIL (cnil.fr) and the ANPDP (Algeria).</p>
+<p><strong>Cookies</strong>: strictly necessary cookies (language, session) are set without consent; audience and third-party cookies only after your agreement via the banner, with refusal as easy as acceptance. List: [name, purpose, duration — TO COMPLETE].</p>
+<p><strong>Minors</strong>: the site is not aimed at children under 15 without parental authorisation.</p></div><div data-l="es"><h2>Política de privacidad y cookies</h2>
+<p><strong>Responsable del tratamiento</strong>: [razón social, dirección, correo del DPO/contacto].</p>
+<p><strong>Datos recogidos</strong>: identidad y datos de contacto (formularios, reservas), datos de viaje (fechas, preferencias), datos de acceso del administrador, datos técnicos (IP, navegador), preferencia de idioma.</p>
+<p><strong>Finalidades y bases jurídicas</strong>
+- Tramitar solicitudes y reservas — ejecución del contrato.
+- Gestionar la cuenta de administrador y la seguridad — interés legítimo.
+- Medición de audiencia y mejora del sitio — consentimiento.
+- Obligaciones contables y legales — obligación legal.
+- Boletín informativo — consentimiento (revocable en cualquier momento).</p>
+<p><strong>Destinatarios</strong>: equipo del editor, alojamiento (Render), base de datos (MongoDB Atlas), proveedor de pagos, socios de viaje estrictamente necesarios (hoteles, transportistas, guías).</p>
+<p><strong>Servicios de terceros cargados por su navegador</strong>: para mostrar fotos, extractos de historia y mapas, su navegador contacta directamente con Wikipedia / Wikimedia (Wikimedia Foundation) y OpenStreetMap (OpenStreetMap Foundation). Su dirección IP se les transmite. No utilizamos ningún rastreador publicitario.</p>
+<p><strong>Transferencias fuera de la UE / de Argelia</strong>: amparadas por las cláusulas contractuales tipo de la Comisión Europea; para Argelia, conforme a la ley 18-07 y a las autorizaciones de la ANPDP cuando sean necesarias.</p>
+<p><strong>Plazos de conservación</strong>: reservas 5 años tras el último viaje; prospectos 3 años tras el último contacto; registros técnicos 12 meses; cookies 13 meses como máximo.</p>
+<p><strong>Sus derechos</strong>: acceso, rectificación, supresión, limitación, oposición, portabilidad, retirada del consentimiento, directrices póstumas. Ejercicio: [correo electrónico]. Puede presentar una reclamación ante la CNIL (cnil.fr) y la ANPDP (Argelia).</p>
+<p><strong>Cookies</strong>: las cookies estrictamente necesarias (idioma, sesión) se instalan sin consentimiento; las de audiencia y de terceros solo tras su aceptación mediante el banner, siendo rechazar tan fácil como aceptar. Lista: [nombre, finalidad, duración — A COMPLETAR].</p>
+<p><strong>Menores</strong>: el sitio no está dirigido a menores de 15 años sin autorización parental.</p></div><div data-l="ar"><h2>سياسة الخصوصية وملفات تعريف الارتباط</h2>
+<p><strong>المسؤول عن المعالجة</strong>: [الاسم التجاري، العنوان، بريد مسؤول حماية البيانات/الاتصال].</p>
+<p><strong>البيانات المجمّعة</strong>: الهوية وبيانات الاتصال (الاستمارات، الحجوزات)، بيانات السفر (التواريخ، التفضيلات)، بيانات دخول المشرف، بيانات تقنية (عنوان IP، المتصفح)، تفضيل اللغة.</p>
+<p><strong>الغايات والأسس القانونية</strong>
+- معالجة الطلبات والحجوزات — تنفيذ العقد.
+- تسيير حساب المشرف والأمان — المصلحة المشروعة.
+- قياس عدد الزوار وتحسين الموقع — الموافقة.
+- الالتزامات المحاسبية والقانونية — الالتزام القانوني.
+- النشرة الإخبارية — الموافقة (يمكن سحبها في أي وقت).</p>
+<p><strong>المستلمون</strong>: فريق الناشر، المستضيف (Render)، قاعدة البيانات (MongoDB Atlas)، مزوّد الدفع، شركاء السفر عند الضرورة القصوى (فنادق، ناقلون، مرشدون).</p>
+<p><strong>خدمات الأطراف الثالثة التي يحمّلها متصفحك</strong>: لعرض الصور ومقتطفات التاريخ والخرائط، يتصل متصفحك مباشرة بويكيبيديا / ويكيميديا (مؤسسة ويكيميديا) وOpenStreetMap (مؤسسة OpenStreetMap). ويُرسل إليها عنوان IP الخاص بك. ولا نستخدم أي أدوات تتبع إعلانية.</p>
+<p><strong>التحويلات خارج الاتحاد الأوروبي / الجزائر</strong>: تخضع للبنود التعاقدية النموذجية للمفوضية الأوروبية؛ وبالنسبة للجزائر، وفق القانون 18-07 وتراخيص ANPDP عند الاقتضاء.</p>
+<p><strong>مدد الاحتفاظ</strong>: الحجوزات 5 سنوات بعد آخر رحلة؛ الزبائن المحتملون 3 سنوات بعد آخر اتصال؛ السجلات التقنية 12 شهراً؛ ملفات تعريف الارتباط 13 شهراً كحد أقصى.</p>
+<p><strong>حقوقك</strong>: الاطلاع، التصحيح، المحو، التقييد، الاعتراض، قابلية النقل، سحب الموافقة، التوجيهات بعد الوفاة. لممارستها: [البريد الإلكتروني]. يمكنك تقديم شكوى لدى CNIL (cnil.fr) وANPDP (الجزائر).</p>
+<p><strong>ملفات تعريف الارتباط</strong>: تُوضع الملفات الضرورية تماماً (اللغة، الجلسة) دون موافقة؛ أما ملفات القياس وملفات الأطراف الثالثة فلا توضع إلا بعد موافقتك عبر الشريط، ويكون الرفض بسهولة القبول. القائمة: [الاسم، الغاية، المدة — يُستكمل].</p>
+<p><strong>القاصرون</strong>: الموقع غير موجه لمن هم دون 15 سنة دون إذن ولي الأمر.</p></div></section>
+<section id="securite"><div data-l="fr"><h2>Politique de sécurité</h2>
 <ul>
 <li><strong>Chiffrement en transit</strong> : HTTPS/TLS sur tout le site (certificat géré par Render), HSTS activé.</li>
 <li><strong>Mots de passe administrateur</strong> : hachés avec bcrypt (coût 12), jamais stockés en clair ; politique de mots de passe robustes ; connexion limitée à 10 tentatives / 15 min.</li>
@@ -68,5 +224,45 @@ Contact : [email] — [téléphone]</p>
 <li><strong>Paiements</strong> : traités par un prestataire certifié PCI-DSS (3-D Secure) ; aucune donnée de carte ne transite par nos serveurs.</li>
 <li><strong>Incident</strong> : notification à la CNIL sous 72 h en cas de violation de données à risque, et information des personnes concernées.</li>
 <li><strong>Signalement d'une faille</strong> : [email sécurité].</li>
-</ul></section>
-</body></html>
+</ul></div><div data-l="en"><h2>Security policy</h2>
+<ul>
+<li><strong>Encryption in transit</strong>: HTTPS/TLS across the whole site (certificate managed by Render), HSTS enabled.</li>
+<li><strong>Administrator passwords</strong>: hashed with bcrypt (cost 12), never stored in plain text; strong password policy; login limited to 10 attempts / 15 min.</li>
+<li><strong>Sessions</strong>: signed JWT tokens, 8 h lifetime, secret stored in an environment variable.</li>
+<li><strong>Access control</strong>: <code>admin</code> / <code>editor</code> roles, least-privilege principle.</li>
+<li><strong>Application</strong>: security headers (Helmet, CSP), input validation, NoSQL-injection protection, rate limiting.</li>
+<li><strong>Images</strong>: no file uploads; only https URLs are accepted, which reduces the attack surface and storage.</li>
+<li><strong>Data</strong>: MongoDB Atlas database with restricted access, encryption at rest, regular backups.</li>
+<li><strong>Payments</strong>: processed by a PCI-DSS certified provider (3-D Secure); no card data passes through our servers.</li>
+<li><strong>Incidents</strong>: notification to the CNIL within 72 h in case of a data breach posing a risk, and information to the persons concerned.</li>
+<li><strong>Reporting a vulnerability</strong>: [security email].</li>
+</ul></div><div data-l="es"><h2>Política de seguridad</h2>
+<ul>
+<li><strong>Cifrado en tránsito</strong>: HTTPS/TLS en todo el sitio (certificado gestionado por Render), HSTS activado.</li>
+<li><strong>Contraseñas de administrador</strong>: cifradas con bcrypt (coste 12), nunca almacenadas en claro; política de contraseñas robustas; inicio de sesión limitado a 10 intentos / 15 min.</li>
+<li><strong>Sesiones</strong>: tokens JWT firmados, duración de 8 h, secreto almacenado en una variable de entorno.</li>
+<li><strong>Control de acceso</strong>: roles <code>admin</code> / <code>editor</code>, principio de mínimo privilegio.</li>
+<li><strong>Aplicación</strong>: cabeceras de seguridad (Helmet, CSP), validación de entradas, protección contra inyección NoSQL, limitación de frecuencia.</li>
+<li><strong>Imágenes</strong>: sin subida de archivos; solo se aceptan URL https, lo que reduce la superficie de ataque y el almacenamiento.</li>
+<li><strong>Datos</strong>: base MongoDB Atlas con acceso restringido, cifrado en reposo, copias de seguridad periódicas.</li>
+<li><strong>Pagos</strong>: procesados por un proveedor certificado PCI-DSS (3-D Secure); ningún dato de tarjeta pasa por nuestros servidores.</li>
+<li><strong>Incidentes</strong>: notificación a la CNIL en 72 h en caso de violación de datos con riesgo, e información a las personas afectadas.</li>
+<li><strong>Notificar una vulnerabilidad</strong>: [correo de seguridad].</li>
+</ul></div><div data-l="ar"><h2>سياسة الأمان</h2>
+<ul>
+<li><strong>التشفير أثناء النقل</strong>: HTTPS/TLS على كامل الموقع (الشهادة تديرها Render)، وHSTS مفعّل.</li>
+<li><strong>كلمات مرور المشرفين</strong>: مجزّأة بخوارزمية bcrypt (التكلفة 12)، ولا تُخزَّن أبداً كنص واضح؛ سياسة كلمات مرور قوية؛ الدخول محدد بـ 10 محاولات كل 15 دقيقة.</li>
+<li><strong>الجلسات</strong>: رموز JWT موقّعة، مدتها 8 ساعات، والسر مخزَّن في متغير بيئة.</li>
+<li><strong>التحكم في الوصول</strong>: أدوار <code>admin</code> / <code>editor</code>، ومبدأ أدنى الصلاحيات.</li>
+<li><strong>التطبيق</strong>: ترويسات أمان (Helmet، CSP)، التحقق من المدخلات، الحماية من حقن NoSQL، تحديد معدل الطلبات.</li>
+<li><strong>الصور</strong>: لا رفع للملفات؛ تُقبل فقط روابط https، مما يقلل سطح الهجوم والتخزين.</li>
+<li><strong>البيانات</strong>: قاعدة MongoDB Atlas بوصول مقيّد، وتشفير أثناء التخزين، ونسخ احتياطية منتظمة.</li>
+<li><strong>المدفوعات</strong>: يعالجها مزوّد معتمد وفق PCI-DSS (3-D Secure)؛ ولا تمر أي بيانات بطاقة عبر خوادمنا.</li>
+<li><strong>الحوادث</strong>: إخطار CNIL خلال 72 ساعة في حال حدوث خرق للبيانات ينطوي على خطر، وإعلام الأشخاص المعنيين.</li>
+<li><strong>الإبلاغ عن ثغرة</strong>: [بريد الأمان].</li>
+</ul></div></section>
+<script>
+(function(){var s=document.getElementById('lang');s.value=document.documentElement.lang;
+s.onchange=function(){var l=s.value;document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';try{localStorage.setItem('lang',l)}catch(e){}};
+if(location.hash){var t=document.querySelector(location.hash);if(t)setTimeout(function(){t.scrollIntoView()},50)}})();
+</script></body></html>
