@@ -1,0 +1,15 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin — Djazaïr</title>
+<style>body{font:15px system-ui;max-width:900px;margin:auto;padding:16px}input,select,button{font:inherit;padding:7px;margin:3px 0}
+input,select{width:100%;box-sizing:border-box}.row{display:flex;gap:8px;align-items:center;border-bottom:1px solid #ccc;padding:6px 0}.row span{flex:1}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:8px}img{max-height:100px;border-radius:6px}.hide{display:none}</style></head><body>
+<h1>Back-office</h1>
+<div id="login"><input id="em" type="email" placeholder="Email"><input id="pw" type="password" placeholder="Mot de passe"><button id="go">Connexion</button><p id="err"></p></div>
+<div id="app" class="hide">
+<select id="col"><option value="circuits">Circuits</option><option value="activities">Activités</option><option value="restaurants">Restaurants</option><option value="heritage">Histoire & Culture</option><option value="news">Actualités</option><option value="candidates">À valider (auto)</option></select>
+<form id="f" class="hide"><div class="g"><input name="slug" placeholder="slug (ex: casbah-alger)" required><select name="status"><option>draft</option><option>published</option></select>
+<input name="fr" placeholder="Titre FR"><input name="ar" placeholder="العنوان (Darja)" dir="rtl"><input name="en" placeholder="Title EN"><input name="es" placeholder="Título ES"></div>
+<input name="cover" type="url" placeholder="Coller l'URL de l'image (https://…)"><img id="pv" alt="">
+<input name="extra" placeholder='Champs en plus (JSON) ex: {"category":"randonnee"}'><button>Enregistrer</button><p id="msg"></p></form>
+<div id="list"></div></div>
+<script src="admin.js"></script></body></html>
