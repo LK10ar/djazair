@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Algérie — Voyages & Expéditions</title>
+<style>
+:root{--bg:#fbf7ef;--fg:#2a2118;--mut:#6f6250;--card:#fff;--line:#e6dcc8;--acc:#c0562b;--acc2:#0b5c4b;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#17130e;--fg:#f3ead9;--mut:#b5a78f;--card:#221c14;--line:#3a3022}}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 Georgia,serif}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);border-bottom:1px solid var(--line);z-index:5}
+.bar{max-width:1100px;margin:auto;display:flex;align-items:center;gap:12px;padding:10px 16px}
+.logo{font-weight:700;font-size:20px;color:var(--acc);margin-inline-end:auto}
+nav{display:flex;gap:4px;overflow-x:auto}
+nav button,select{font:inherit;font-size:14px;background:none;color:var(--fg);border:1px solid transparent;border-radius:8px;padding:6px 10px;cursor:pointer;white-space:nowrap}
+nav button.on{border-color:var(--acc);color:var(--acc)}
+select{border-color:var(--line);background:var(--card)}
+.hero{padding:48px 16px;text-align:center;background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff}
+.hero h1{margin:0 0 8px;font-size:clamp(26px,6vw,44px)}
+main{max-width:1100px;margin:auto;padding:20px 16px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--fg);border-radius:99px;padding:5px 12px;font-size:14px;cursor:pointer}
+.chip.on{background:var(--acc);color:#fff;border-color:var(--acc)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.card .img{height:90px;background:linear-gradient(135deg,var(--c1),var(--c2))}
+.card div.b{padding:12px}.card h3{margin:0 0 6px;font-size:17px}
+.meta{font:13px system-ui;color:var(--mut)}
+.tag{display:inline-block;font:12px system-ui;background:var(--line);border-radius:6px;padding:2px 7px;margin:6px 4px 0 0}
+.soon{padding:40px;text-align:center;color:var(--mut);border:1px dashed var(--line);border-radius:14px}
+details{margin-top:8px;font:13px system-ui;color:var(--mut)}summary{cursor:pointer;color:var(--acc)}.ft{font:14px system-ui;color:var(--mut);margin:0 0 14px}
+footer{border-top:1px solid var(--line);margin-top:30px;padding:24px 16px;font:14px system-ui;color:var(--mut)}
+footer .in{max-width:1100px;margin:auto;display:flex;flex-wrap:wrap;gap:8px 20px}
+footer a{color:var(--mut)}
+</style></head><body>
+<header><div class="bar"><span class="logo">Djazaïr</span>
+<select id="lang" aria-label="Langue"><option value="fr">FR</option><option value="ar">الدارجة</option><option value="en">EN</option><option value="es">ES</option></select></div>
+<div class="bar" style="padding-top:0"><nav id="nav"></nav></div></header>
+<section class="hero"><h1 id="h1"></h1><p id="sub"></p></section>
+<main><div id="view"></div></main>
+<footer><div class="in" id="foot"></div></footer>
+<script>
+const T={
+fr:{h1:"Découvrez l'Algérie",sub:"Circuits, expéditions et expériences authentiques",nav:["Circuits","Activités","Gastronomie","Histoire & Culture","Actualités"],all:"Tous",soon:"Rubrique alimentée depuis le back-office.",days:"jours",legal:["Mentions légales","CGU","CGV","Confidentialité","Sécurité"],reg:{nord:"Nord",est:"Est",ouest:"Ouest",sahara:"Sahara"},tr:{bus:"Bus",'4x4':"4x4",chameau:"Méharée"}},
+ar:{h1:"اكتشف الجزائر",sub:"رحلات ومغامرات وتجارب أصيلة",nav:["الرحلات","الأنشطة","الأكلات","التاريخ والثقافة","الأخبار"],all:"الكل",soon:"هاد القسم يتعمر من لوحة الإدارة.",days:"أيام",legal:["إشعار قانوني","شروط الاستعمال","شروط البيع","الخصوصية","الأمان"],reg:{nord:"الشمال",est:"الشرق",ouest:"الغرب",sahara:"الصحراء"},tr:{bus:"حافلة",'4x4':"4x4",chameau:"ميهاري"}},
+en:{h1:"Discover Algeria",sub:"Tours, expeditions and authentic experiences",nav:["Tours","Activities","Food","History & Culture","News"],all:"All",soon:"This section is fed from the admin back-office.",days:"days",legal:["Legal notice","Terms of use","Terms of sale","Privacy","Security"],reg:{nord:"North",est:"East",ouest:"West",sahara:"Sahara"},tr:{bus:"Coach",'4x4':"4x4",chameau:"Camel trek"}},
+es:{h1:"Descubre Argelia",sub:"Circuitos, expediciones y experiencias auténticas",nav:["Circuitos","Actividades","Gastronomía","Historia y Cultura","Noticias"],all:"Todos",soon:"Sección alimentada desde el back-office.",days:"días",legal:["Aviso legal","Condiciones de uso","Condiciones de venta","Privacidad","Seguridad"],reg:{nord:"Norte",est:"Este",ouest:"Oeste",sahara:"Sáhara"},tr:{bus:"Autocar",'4x4':"4x4",chameau:"Camello"}}};
+// Données du catalogue ONAT (en prod : GET /api/circuits)
+const C=[
+["Spécial Algérois & Kabylie",7,"nord","bus","Hôtel"],["Le Circuit Algérois",5,"nord","bus","Hôtel"],
+["Le Constantinois",6,"est","bus","Hôtel"],["Sur les traces de Saint-Augustin",6,"est","bus","Hôtel"],
+["L'Algérie Romaine",7,"est","bus","Hôtel"],["L'Oranie",6,"ouest","bus","Hôtel"],
+["Les Perles de l'Ouest",8,"ouest","bus","Hôtel"],["Les Jardins de la Saoura",7,"sahara","bus","Hôtel"],
+["Le Circuit des Oasis",8,"sahara","bus","Hôtel"],["Les Ksours de Timimoun",7,"sahara","bus","Hôtel"],
+["Le Tassili du Hoggar",8,"sahara","4x4","Bivouac"],["Hoggar Insolite",6,"sahara","4x4","Camping"],
+["Le Hoggar en Méharée",12,"sahara","chameau","Bivouac"],["Sur les traces de Charles de Foucauld",9,"sahara","4x4","Hôtel & auberge"],
+["Découverte de la Tadrart",7,"sahara","4x4","Bivouac"],["Le Tassili N'Ajjer",6,"sahara","4x4","Auberge & bivouac"],
+["La Méharée d'Issendilène",8,"sahara","chameau","Auberge & bivouac"]];
+const HUE={nord:["#2a7fa8","#0b5c4b"],est:["#b0703a","#7a3b1d"],ouest:["#c0562b","#8a2f4d"],sahara:["#e0a040","#b5451b"]};
+const S=["Alger · Tipasa/Cherchell · Tizi-Ouzou · Béni-Yenni · Blida","Alger · Casbah · Bardo · Tipasa · Blida/La Chiffa","Annaba · Skikda · Timgad · Constantine · Djemila · Guelma","Annaba · Constantine · Batna · Tébessa · Souk Ahras (Madaure)","Alger · Tipasa · Sétif · Batna · Constantine · Tiddis · Guelma · Annaba","Oran · Tlemcen · El Eubad · Sidi Bel Abbès","Oran · Mostaganem · Tiaret · Mascara · Tlemcen · Beni Saf","Béchar · Taghit · Béni Abbès · Timimoun · El Goléa · Ghardaïa","Bou-Saâda · Biskra · El Oued · Touggourt · Ouargla · Ghardaïa · Laghouat","Timimoun · Fatis · M'Guiden · In Belbel · Ksabit · Semdjane","Tamanrasset · Tameskrest · Tahaggart · Yuf Haket · Assekrem","Assekrem · Hirafok · Ideles · Tazrouk · Tamekrest","Tamanrasset · Ahannanegh · Assekrem · Tinesmidjak · Indjender","Béchar · Beni Abbès · Timimoun · El Goléa · Ghardaïa · Assekrem","Tin Arassou · Tissataka · Moul-Ennaga · Tin Merzouga · Djanet","Djanet · Tamrit · Sefar · Tin-Tazarift · Tin-Zoumaitok","Djanet · Dag Iharadj · In Aramas · Tikoubaouine · Issendelène"];
+C.forEach((c,i)=>c.push(S[i]));
+const D={
+1:[["Randonnée à l'Assekrem","Randonnée","Ascension à pied jusqu'à l'ermitage du Père de Foucauld (2 710 m) pour le lever du soleil, dans le Hoggar."],["Trek dans le Tassili N'Ajjer","Randonnée","Progression à pied vers le plateau de Tamrit et ses gravures rupestres, avec bivouac."],["Bivouac dans les dunes","Bivouac","Nuits sous les étoiles au pied du Grand Erg Occidental (Taghit) ou dans le Tadrart."],["Méharée","Bivouac","Caravane de dromadaires avec équipe touarègue, de Djanet à la guelta d'Issendelène."],["Plongée sur la côte","Plongée","Sites de plongée du littoral méditerranéen (Tipasa, Jijel, Annaba) : fiches à compléter depuis l'admin."],["Bijouterie de Béni-Yenni","Artisanat","Rencontre avec des artisans de l'argent et du corail en Kabylie."],["Poterie noire de Tamentit","Artisanat","Visite du vieux ksar et de la poterie noire, unique en Algérie."],["Casbah d'Alger","Exploration urbaine","Traversée de la Casbah, du palais des Rais et de la basse Casbah."]],
+2:[["Couscous","Plat","Semoule vapeur, légumes et viande ; décliné selon les régions."],["Chakhchoukha","Plat","Galette effilochée, sauce épicée et viande, spécialité de l'Est."],["Rechta","Plat","Pâtes fines en bouillon parfumé, plat de fête d'Alger."],["Mhadjeb","Street-food","Crêpe de semoule farcie tomate-oignon, cuite à la plaque."],["Karantita","Street-food","Tarte de pois chiches cuite au four, incontournable à Oran."],["Taguella","Sahara","Pain touareg cuit sous le sable, servi avec le thé à la menthe."],["Kalb el louz","Dessert","Gâteau de semoule aux amandes et sirop."]],
+3:[["Timgad","UNESCO","Ville romaine fondée par Trajan, surnommée la « Pompéi africaine »."],["Djémila","UNESCO","Antique Cuicul, forums et temples en montagne près de Sétif."],["Tipasa","UNESCO","Ruines phéniciennes, romaines et paléochrétiennes en bord de mer."],["Casbah d'Alger","UNESCO","Médina ottomane, palais des Rais et ruelles en escaliers."],["Vallée du M'Zab","UNESCO","Cités mozabites de Ghardaïa, modèle d'urbanisme saharien."],["Kalâa des Béni Hammad","UNESCO","Capitale hammadide du XIe siècle dans le M'Sila."],["Tassili N'Ajjer","UNESCO","Plateau gréseux aux milliers de peintures et gravures rupestres."],["Musées","Musée","Bardo (Alger), Cirta (Constantine), Zabana (Oran), musée de Tipasa."]],
+4:[]};
+let cat="all";
+const $=id=>document.getElementById(id);
+function render(){
+ const t=T[lang];document.documentElement.lang=lang;document.documentElement.dir=lang==="ar"?"rtl":"ltr";
+ $("h1").textContent=t.h1;$("sub").textContent=t.sub;
+ $("nav").innerHTML=t.nav.map((n,i)=>`<button class="${i===tab?'on':''}" data-i="${i}">${n}</button>`).join("");
+ $("foot").innerHTML=t.legal.map(l=>`<a href="#">${l}</a>`).join("")+`<span>© Djazaïr</span>`;
+ if(tab===4){$("view").innerHTML=`<div class="soon">Aucune actualité publiée pour le moment. Les événements, festivals et nouveautés s'ajoutent depuis le back-office.</div>`;return}
+ if(tab>0){const L=D[tab],cs=["all",...new Set(L.map(x=>x[1]))];
+  $("view").innerHTML=`<div class="filters">${cs.map(k=>`<button class="chip ${k===cat?'on':''}" data-k="${k}">${k==="all"?t.all:k}</button>`).join("")}</div>${tab===2?'<p class="ft">Adresses et restaurants : alimentés par l\'enrichissement automatique après validation admin.</p>':''}<div class="grid">${L.filter(x=>cat==="all"||x[1]===cat).map(x=>`<article class="card"><div class="img" style="--c1:#e0a040;--c2:#b5451b"></div><div class="b"><h3>${x[0]}</h3><span class="tag">${x[1]}</span><p class="meta">${x[2]}</p></div></article>`).join("")}</div>`;return}
+ const regs=["all","nord","est","ouest","sahara"];
+ $("view").innerHTML=`<div class="filters">${regs.map(r=>`<button class="chip ${r===reg?'on':''}" data-r="${r}">${r==="all"?t.all:t.reg[r]}</button>`).join("")}</div>
+ <div class="grid">${C.filter(c=>reg==="all"||c[2]===reg).map(c=>`<article class="card"><div class="img" style="--c1:${HUE[c[2]][0]};--c2:${HUE[c[2]][1]}"></div><div class="b"><h3>${c[0]}</h3><div class="meta">${c[1]} ${t.days} · ${t.reg[c[2]]}</div><span class="tag">${t.tr[c[3]]}</span><span class="tag">${c[4]}</span><details><summary>Étapes</summary>${c[5]}</details></div></article>`).join("")}</div>`;
+}
+document.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;
+ if(b.dataset.i){tab=+b.dataset.i;cat="all"}if(b.dataset.k)cat=b.dataset.k;if(b.dataset.r)reg=b.dataset.r;render()});
+$("lang").onchange=e=>{lang=e.target.value;render()};
+render();
+</script></body></html>
