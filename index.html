@@ -63,13 +63,13 @@ const D={
 2:[["Couscous","Plat","Semoule vapeur, légumes et viande ; décliné selon les régions."],["Chakhchoukha","Plat","Galette effilochée, sauce épicée et viande, spécialité de l'Est."],["Rechta","Plat","Pâtes fines en bouillon parfumé, plat de fête d'Alger."],["Mhadjeb","Street-food","Crêpe de semoule farcie tomate-oignon, cuite à la plaque."],["Karantita","Street-food","Tarte de pois chiches cuite au four, incontournable à Oran."],["Taguella","Sahara","Pain touareg cuit sous le sable, servi avec le thé à la menthe."],["Kalb el louz","Dessert","Gâteau de semoule aux amandes et sirop."]],
 3:[["Timgad","UNESCO","Ville romaine fondée par Trajan, surnommée la « Pompéi africaine »."],["Djémila","UNESCO","Antique Cuicul, forums et temples en montagne près de Sétif."],["Tipasa","UNESCO","Ruines phéniciennes, romaines et paléochrétiennes en bord de mer."],["Casbah d'Alger","UNESCO","Médina ottomane, palais des Rais et ruelles en escaliers."],["Vallée du M'Zab","UNESCO","Cités mozabites de Ghardaïa, modèle d'urbanisme saharien."],["Kalâa des Béni Hammad","UNESCO","Capitale hammadide du XIe siècle dans le M'Sila."],["Tassili N'Ajjer","UNESCO","Plateau gréseux aux milliers de peintures et gravures rupestres."],["Musées","Musée","Bardo (Alger), Cirta (Constantine), Zabana (Oran), musée de Tipasa."]],
 4:[]};
-let cat="all";
+let cat="all",lang="fr",tab=0,reg="all";
 const $=id=>document.getElementById(id);
 function render(){
  const t=T[lang];document.documentElement.lang=lang;document.documentElement.dir=lang==="ar"?"rtl":"ltr";
  $("h1").textContent=t.h1;$("sub").textContent=t.sub;
  $("nav").innerHTML=t.nav.map((n,i)=>`<button class="${i===tab?'on':''}" data-i="${i}">${n}</button>`).join("");
- $("foot").innerHTML=t.legal.map((l,i)=>`<a href="/legal.html#${["mentions","cgu","cgv","confidentialite","securite"][i]}">${l}</a>`).join("")+`<span>© Djazaïr</span>`;
+ $("foot").innerHTML=t.legal.map((l,i)=>`<a href="legal.html#${["mentions","cgu","cgv","confidentialite","securite"][i]}">${l}</a>`).join("")+`<span>© Djazaïr</span>`;
  if(tab===4){$("view").innerHTML=`<div class="soon">Aucune actualité publiée pour le moment. Les événements, festivals et nouveautés s'ajoutent depuis le back-office.</div>`;return}
  if(tab>0){const L=D[tab],cs=["all",...new Set(L.map(x=>x[1]))];
   $("view").innerHTML=`<div class="filters">${cs.map(k=>`<button class="chip ${k===cat?'on':''}" data-k="${k}">${k==="all"?t.all:k}</button>`).join("")}</div>${tab===2?'<p class="ft">Adresses et restaurants : alimentés par l\'enrichissement automatique après validation admin.</p>':''}<div class="grid">${L.filter(x=>cat==="all"||x[1]===cat).map(x=>`<article class="card"><div class="img" style="--c1:#e0a040;--c2:#b5451b"></div><div class="b"><h3>${x[0]}</h3><span class="tag">${x[1]}</span><p class="meta">${x[2]}</p></div></article>`).join("")}</div>`;return}

@@ -1,9 +1,10 @@
+const API = 'https://back-djazair.onrender.com'; // URL de l'API Render, sans / final
 const $ = id => document.getElementById(id);
 let token = sessionStorage.getItem('t') || '';
-const api = (p, o = {}) => fetch('/api/admin/' + p, { ...o, headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + token } });
+const api = (p, o = {}) => fetch(API + '/api/admin/' + p, { ...o, headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + token } });
 const show = () => { $('login').classList.toggle('hide', !!token); $('app').classList.toggle('hide', !token); if (token) load(); };
 $('go').onclick = async () => {
-  const r = await fetch('/api/auth/login', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+  const r = await fetch(API + '/api/auth/login', { method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email: $('em').value, password: $('pw').value }) });
   if (!r.ok) return $('err').textContent = 'Identifiants incorrects';
   token = (await r.json()).token; sessionStorage.setItem('t', token); show();
